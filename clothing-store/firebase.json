@@ -1,0 +1,18 @@
+{
+  "hosting": [
+    {
+      "site": "clothing-store-7cc0b",
+      "public": "build/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "clothing-store",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

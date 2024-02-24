@@ -1,0 +1,29 @@
+.checkout-container {
+    background-image: url(../../assets/logos/background_primaPagina.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+}
+
+.container {
+    background-color: #d9d9d9;
+    overflow: auto;
+    width: 70%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container h1,
+.container h3 {
+    margin: 20px 0;
+}

@@ -1,0 +1,20 @@
+<div class="checkout-container">
+    <div class="user-info">
+        <h1>Billing address</h1>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" [(ngModel)]="firstName" placeholder="Enter your first name">
+  
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" [(ngModel)]="lastName" placeholder="Enter your last name">
+  
+      <label for="address">Address:</label>
+      <textarea id="address" [(ngModel)]="address" placeholder="Enter your address"></textarea>
+    </div>
+  
+    <div class="payment-info">
+        <h2>YOUR ORDER</h2>
+        <p>Total Price: ${{ totalPrice.toFixed(2) }}</p>
+      <button (click)="pay()">Pay</button>
+    </div>
+</div>
+  

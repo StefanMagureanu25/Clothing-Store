@@ -1,0 +1,25 @@
+<div class="registration-area">
+    <div class="registration-container">
+      <h2>Register</h2>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="password" placeholder="Enter password">
+      </div>
+      <!-- Add the username field -->
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" [(ngModel)]="username" placeholder="Enter username">
+      </div>
+      <!-- Button to register -->
+      <div class="register-btn">
+        <button (click)="register()" [disabled]="!email || !password || !username">Register</button>
+      </div>
+      <!-- Error message display -->
+      <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+    </div>
+  </div>
+  

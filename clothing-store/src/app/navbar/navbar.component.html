@@ -1,0 +1,15 @@
+<nav>
+    <ul>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+      <li *ngIf="isLoggedIn" (click)="logout()"><a routerLink = "/home">Logout</a></li>
+      <li id = "center"><a [routerLink]="['/']" id ="bigger-size">Thrift Shop</a></li>
+      <li *ngIf="isLoggedIn">Hello, {{ username }}</li>
+      <li *ngIf="isLoggedIn">
+        <a [routerLink]="'/shopping-cart'">
+            <img src="../../assets/logos/cartIcon.png" alt="Cart">
+            <span>Cart</span>
+        </a>
+    </li>
+    </ul>
+  </nav>
+  

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "clothing-store-app-e6400"
+  },
+  "targets": {
+    "clothing-store-app-e6400": {
+      "hosting": {
+        "clothing-store": [
+          "clothing-store-7cc0b"
+        ]
+      }
+    }
+  }
+}

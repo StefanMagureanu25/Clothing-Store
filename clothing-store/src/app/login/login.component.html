@@ -1,0 +1,23 @@
+<div class="login-area">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+        <div class="login-btn">
+          <button (click)="login()" [disabled]="!email || !password">Login</button>
+        </div>
+      </form>
+      <div class="login-error" *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+      <div class="login-question">
+        Don't have an account? <a routerLink="/register">Register</a>
+      </div>
+    </div>
+  </div>
+  

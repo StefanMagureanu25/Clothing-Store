@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    font-family: 'myFont', sans-serif;
+    z-index: 1;
+  }
+  
+  @font-face {
+    font-family: myFont;
+    src: url(../../assets/fonts/IndieFlower-Regular.ttf);
+  }
+  
+
+  #center{
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  nav {
+    width: 100%;
+    padding-top: 2%;
+    background-color: #333; 
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  
+  nav li {
+    text-decoration: none;
+    color: white; 
+    padding: 10px 30px; 
+    font-size: 20px; 
+    transition: color 0.3s ease; 
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: white; 
+    font-size: 20px;
+    transition: color 0.3s ease; 
+  }
+  
+  #bigger-size{
+    font-style: italic;
+    font-size: 35px;
+  }
+
+  nav li img {
+    width: 20px; 
+    height: auto; 
+    margin-right: 5px; 
+  }
+  nav li:last-child {
+    margin-left: auto; 
+  }
+  
+  nav li a:hover {
+    color: #8BD7CF; 
+  }
+  

@@ -1,0 +1,20 @@
+<div class="cart-area">
+    <div class="product-container">
+        <div *ngFor="let product of cartProducts" class="product-card">
+            <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
+            <div class="product-details">
+              <h4 class="titlu">{{ product.name }}</h4>
+              <p class="descriere">{{ product.description }}</p>
+              <p class="price">${{ product.price.toFixed(2) }}</p>
+            </div>
+            <img src="../../assets/logos/deleteIcon.png" alt="Delete from cart" (click)="deleteProduct(product)" class="delete-image">
+        </div>
+    </div>       
+
+    <div class="checkout-container">
+        <p class="totalPrice">TOTAL: ${{ totalPrice.toFixed(2) }}</p>
+        <button (click)="checkout()" class="checkoutButton">CHECKOUT</button>
+    </div>
+
+</div>
+
