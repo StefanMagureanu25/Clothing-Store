@@ -13,28 +13,37 @@ export class AuthService {
     this.authState$ = this.afAuth.authState;
   }
 
-  login(email: string, password: string) {
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+  async login(email: string, password: string) {
+    try {
+      await this.afAuth.signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      throw error;
+    }
   }
 
-  register(email: string, password: string, username: string) {
-    return this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then(userCredential => {
-        if (userCredential?.user) {
-          return userCredential.user.updateProfile({
-            displayName: username
-          });
-        } else {
-          throw new Error('User is null');
-        }
-      });
+  async register(email: string, password: string, username: string) {
+    try {
+      const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      if (userCredential?.user) {
+        await userCredential.user.updateProfile({
+          displayName: username
+        });
+        return userCredential.user;
+      } else {
+        throw new Error('User is null');
+      }
+    } catch (error) {
+      throw error;
+    }
   }
-  
 
-  logout() {
-    this.afAuth.signOut().then(() => {
+  async logout() {
+    try {
+      await this.afAuth.signOut();
       this.router.navigate(['/home']);
-    });
+    } catch (error) {
+      throw error;
+    }
   }
 
   isAuthenticated() {

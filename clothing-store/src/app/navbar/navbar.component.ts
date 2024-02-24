@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service'; // Update the path
-import { ProductService } from '../services/product.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,20 +10,15 @@ export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
   username: string = '';
 
-  constructor(private authService: AuthService, private productService : ProductService) { }
-
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.authState$.subscribe(user => {
-      if (user) {
-        this.isLoggedIn = true;
-        this.username = user.displayName || 'User'; 
-      } else {
-        this.isLoggedIn = false;
-        this.username = '';
-      }
+      this.isLoggedIn = !!user;
+      this.username = user ? user.displayName || 'User' : '';
     });
   }
+
   logout(): void {
     this.authService.logout();
   }
